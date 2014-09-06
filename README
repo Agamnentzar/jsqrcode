@@ -9,7 +9,7 @@ Usage:
 
 <script src="build/qrcode.min.js"></script>
 
-Decode image with: `qrcode.decode(source, callback)`.
+Decode image with: qrcode.decode(source, callback).
 
 source: url or DataURL string, canvas element, image element
 callback: callback with one argument containing data string from the QRCode
