@@ -11,15 +11,15 @@ This is a port of ZXing qrcode scanner, http://code.google.com/p/zxing.
 <script src="build/qrcode.min.js"></script>
 ```
 
-Decode image with: `qrcode.decode(source, callback)`.
+Decode image with: `qrcode.decode(source, callback)`
 
 * __source__: url or DataURL string, canvas element, image element
-* __callback__: callback with one argument containing data string from the QRCode
+* __callback__: callback with one argument containing data string decoded from the QRCode image
 
 ###Example: 
 
 ```javascript
-    qrcode.decode("image_url", function (result) {
-        console.log(result);
-    });
+qrcode.decode("image_url", function (result) {
+    console.log(result);
+});
 ```
