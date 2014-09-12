@@ -1,11 +1,7 @@
 /*
-  Ported to JavaScript by Lazar Laszlo 2011 
-  
-  lazarsoft@gmail.com, www.lazarsoft.info
-  
-*/
-
-/*
+* Ported to JavaScript by Lazar Laszlo 2011 
+* 
+* lazarsoft@gmail.com, www.lazarsoft.info
 *
 * Copyright 2007 ZXing authors
 *
@@ -21,7 +17,6 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-
 var Decoder = {};
 
 Decoder.rsDecoder = new ReedSolomonDecoder(GF256.QR_CODE_FIELD);

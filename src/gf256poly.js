@@ -1,11 +1,7 @@
 /*
-  Ported to JavaScript by Lazar Laszlo 2011 
-  
-  lazarsoft@gmail.com, www.lazarsoft.info
-  
-*/
-
-/*
+* Ported to JavaScript by Lazar Laszlo 2011 
+* 
+* lazarsoft@gmail.com, www.lazarsoft.info
 *
 * Copyright 2007 ZXing authors
 *

@@ -16,23 +16,6 @@
 */
 
 window.qrcode = (function(){
-/*
-*
-* Copyright 2007 ZXing authors
-*
-* Licensed under the Apache License, Version 2.0 (the "License");
-* you may not use this file except in compliance with the License.
-* You may obtain a copy of the License at
-*
-*      http://www.apache.org/licenses/LICENSE-2.0
-*
-* Unless required by applicable law or agreed to in writing, software
-* distributed under the License is distributed on an "AS IS" BASIS,
-* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-* See the License for the specific language governing permissions and
-* limitations under the License.
-*/
-
 var GridSampler = {};
 
 GridSampler.checkAndNudgePoints = function (image, points) {
@@ -140,23 +123,6 @@ GridSampler.sampleGridx = function (image, dimension, p1ToX, p1ToY, p2ToX, p2ToY
 	var transform = PerspectiveTransform.quadrilateralToQuadrilateral(p1ToX, p1ToY, p2ToX, p2ToY, p3ToX, p3ToY, p4ToX, p4ToY, p1FromX, p1FromY, p2FromX, p2FromY, p3FromX, p3FromY, p4FromX, p4FromY);
 	return GridSampler.sampleGrid3(image, dimension, transform);
 };
-
-/*
-*
-* Copyright 2007 ZXing authors
-*
-* Licensed under the Apache License, Version 2.0 (the "License");
-* you may not use this file except in compliance with the License.
-* You may obtain a copy of the License at
-*
-*      http://www.apache.org/licenses/LICENSE-2.0
-*
-* Unless required by applicable law or agreed to in writing, software
-* distributed under the License is distributed on an "AS IS" BASIS,
-* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-* See the License for the specific language governing permissions and
-* limitations under the License.
-*/
 
 function ECB(count, dataCodewords) {
 	this.count = count;
@@ -366,23 +332,6 @@ function buildVersions() {
 		new Version(40, [6, 30, 58, 86, 114, 142, 170], new ECBlocks(30, new ECB(19, 118), new ECB(6, 119)), new ECBlocks(28, new ECB(18, 47), new ECB(31, 48)), new ECBlocks(30, new ECB(34, 24), new ECB(34, 25)), new ECBlocks(30, new ECB(20, 15), new ECB(61, 16)))
 	];
 }
-/*
-*
-* Copyright 2007 ZXing authors
-*
-* Licensed under the Apache License, Version 2.0 (the "License");
-* you may not use this file except in compliance with the License.
-* You may obtain a copy of the License at
-*
-*      http://www.apache.org/licenses/LICENSE-2.0
-*
-* Unless required by applicable law or agreed to in writing, software
-* distributed under the License is distributed on an "AS IS" BASIS,
-* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-* See the License for the specific language governing permissions and
-* limitations under the License.
-*/
-
 function PerspectiveTransform(a11, a21, a31, a12, a22, a32, a13, a23, a33) {
 	this.a11 = a11;
 	this.a12 = a12;
@@ -713,23 +662,6 @@ function Detector(image) {
 		return this.processFinderPatternInfo(info);
 	};
 }
-/*
-*
-* Copyright 2007 ZXing authors
-*
-* Licensed under the Apache License, Version 2.0 (the "License");
-* you may not use this file except in compliance with the License.
-* You may obtain a copy of the License at
-*
-*      http://www.apache.org/licenses/LICENSE-2.0
-*
-* Unless required by applicable law or agreed to in writing, software
-* distributed under the License is distributed on an "AS IS" BASIS,
-* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-* See the License for the specific language governing permissions and
-* limitations under the License.
-*/
-
 var FORMAT_INFO_MASK_QR = 0x5412;
 var FORMAT_INFO_DECODE_LOOKUP = [[0x5412, 0x00], [0x5125, 0x01], [0x5E7C, 0x02], [0x5B4B, 0x03], [0x45F9, 0x04], [0x40CE, 0x05], [0x4F97, 0x06], [0x4AA0, 0x07], [0x77C4, 0x08], [0x72F3, 0x09], [0x7DAA, 0x0A], [0x789D, 0x0B], [0x662F, 0x0C], [0x6318, 0x0D], [0x6C41, 0x0E], [0x6976, 0x0F], [0x1689, 0x10], [0x13BE, 0x11], [0x1CE7, 0x12], [0x19D0, 0x13], [0x0762, 0x14], [0x0255, 0x15], [0x0D0C, 0x16], [0x083B, 0x17], [0x355F, 0x18], [0x3068, 0x19], [0x3F31, 0x1A], [0x3A06, 0x1B], [0x24B4, 0x1C], [0x2183, 0x1D], [0x2EDA, 0x1E], [0x2BED, 0x1F]];
 var BITS_SET_IN_HALF_BYTE = [0, 1, 1, 2, 1, 2, 2, 3, 1, 2, 2, 3, 2, 3, 3, 4];
@@ -797,23 +729,6 @@ FormatInformation.doDecodeFormatInformation = function (maskedFormatInfo) {
 	}
 	return null;
 };
-/*
-*
-* Copyright 2007 ZXing authors
-*
-* Licensed under the Apache License, Version 2.0 (the "License");
-* you may not use this file except in compliance with the License.
-* You may obtain a copy of the License at
-*
-*      http://www.apache.org/licenses/LICENSE-2.0
-*
-* Unless required by applicable law or agreed to in writing, software
-* distributed under the License is distributed on an "AS IS" BASIS,
-* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-* See the License for the specific language governing permissions and
-* limitations under the License.
-*/
-
 function ErrorCorrectionLevel(ordinal, bits, name) {
 	this.ordinal_Renamed_Field = ordinal;
 	this.bits = bits;
@@ -844,23 +759,6 @@ var M = new ErrorCorrectionLevel(1, 0x00, "M");
 var Q = new ErrorCorrectionLevel(2, 0x03, "Q");
 var H = new ErrorCorrectionLevel(3, 0x02, "H");
 var FOR_BITS = [M, L, H, Q];
-
-/*
-*
-* Copyright 2007 ZXing authors
-*
-* Licensed under the Apache License, Version 2.0 (the "License");
-* you may not use this file except in compliance with the License.
-* You may obtain a copy of the License at
-*
-*      http://www.apache.org/licenses/LICENSE-2.0
-*
-* Unless required by applicable law or agreed to in writing, software
-* distributed under the License is distributed on an "AS IS" BASIS,
-* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-* See the License for the specific language governing permissions and
-* limitations under the License.
-*/
 
 function BitMatrix(width, height) {
 	if (!height)
@@ -936,23 +834,6 @@ function BitMatrix(width, height) {
 		}
 	};
 }
-/*
-*
-* Copyright 2007 ZXing authors
-*
-* Licensed under the Apache License, Version 2.0 (the "License");
-* you may not use this file except in compliance with the License.
-* You may obtain a copy of the License at
-*
-*      http://www.apache.org/licenses/LICENSE-2.0
-*
-* Unless required by applicable law or agreed to in writing, software
-* distributed under the License is distributed on an "AS IS" BASIS,
-* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-* See the License for the specific language governing permissions and
-* limitations under the License.
-*/
-
 function DataBlock(numDataCodewords, codewords) {
 	this.numDataCodewords = numDataCodewords;
 	this.codewords = codewords;
@@ -1030,23 +911,6 @@ DataBlock.getDataBlocks = function (rawCodewords, version, ecLevel) {
 	}
 	return result;
 };
-
-/*
-*
-* Copyright 2007 ZXing authors
-*
-* Licensed under the Apache License, Version 2.0 (the "License");
-* you may not use this file except in compliance with the License.
-* You may obtain a copy of the License at
-*
-*      http://www.apache.org/licenses/LICENSE-2.0
-*
-* Unless required by applicable law or agreed to in writing, software
-* distributed under the License is distributed on an "AS IS" BASIS,
-* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-* See the License for the specific language governing permissions and
-* limitations under the License.
-*/
 
 function BitMatrixParser(bitMatrix) {
 	var dimension = bitMatrix.Dimension;
@@ -1199,23 +1063,6 @@ function BitMatrixParser(bitMatrix) {
 		return result;
 	};
 }
-/*
-*
-* Copyright 2007 ZXing authors
-*
-* Licensed under the Apache License, Version 2.0 (the "License");
-* you may not use this file except in compliance with the License.
-* You may obtain a copy of the License at
-*
-*      http://www.apache.org/licenses/LICENSE-2.0
-*
-* Unless required by applicable law or agreed to in writing, software
-* distributed under the License is distributed on an "AS IS" BASIS,
-* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-* See the License for the specific language governing permissions and
-* limitations under the License.
-*/
-
 var DataMask = {};
 
 DataMask.forReference = function (reference) {
@@ -1356,23 +1203,6 @@ function DataMask111() {
 }
 
 DataMask.DATA_MASKS = [new DataMask000(), new DataMask001(), new DataMask010(), new DataMask011(), new DataMask100(), new DataMask101(), new DataMask110(), new DataMask111()];
-/*
-*
-* Copyright 2007 ZXing authors
-*
-* Licensed under the Apache License, Version 2.0 (the "License");
-* you may not use this file except in compliance with the License.
-* You may obtain a copy of the License at
-*
-*      http://www.apache.org/licenses/LICENSE-2.0
-*
-* Unless required by applicable law or agreed to in writing, software
-* distributed under the License is distributed on an "AS IS" BASIS,
-* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-* See the License for the specific language governing permissions and
-* limitations under the License.
-*/
-
 function ReedSolomonDecoder(field) {
 	this.field = field;
 
@@ -1506,23 +1336,6 @@ function ReedSolomonDecoder(field) {
 		return result;
 	};
 }
-/*
-*
-* Copyright 2007 ZXing authors
-*
-* Licensed under the Apache License, Version 2.0 (the "License");
-* you may not use this file except in compliance with the License.
-* You may obtain a copy of the License at
-*
-*      http://www.apache.org/licenses/LICENSE-2.0
-*
-* Unless required by applicable law or agreed to in writing, software
-* distributed under the License is distributed on an "AS IS" BASIS,
-* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-* See the License for the specific language governing permissions and
-* limitations under the License.
-*/
-
 function GF256Poly(field, coefficients) {
 	if (coefficients == null || coefficients.length == 0) {
 		throw "System.ArgumentException";
@@ -1693,23 +1506,6 @@ function GF256Poly(field, coefficients) {
 		return new Array(quotient, remainder);
 	};
 }
-/*
-*
-* Copyright 2007 ZXing authors
-*
-* Licensed under the Apache License, Version 2.0 (the "License");
-* you may not use this file except in compliance with the License.
-* You may obtain a copy of the License at
-*
-*      http://www.apache.org/licenses/LICENSE-2.0
-*
-* Unless required by applicable law or agreed to in writing, software
-* distributed under the License is distributed on an "AS IS" BASIS,
-* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-* See the License for the specific language governing permissions and
-* limitations under the License.
-*/
-
 function GF256(primitive) {
 	this.expTable = new Array(256);
 	this.logTable = new Array(256);
@@ -1791,23 +1587,6 @@ GF256.DATA_MATRIX_FIELD = new GF256(0x012D);
 GF256.addOrSubtract = function (a, b) {
 	return a ^ b;
 };
-/*
-*
-* Copyright 2007 ZXing authors
-*
-* Licensed under the Apache License, Version 2.0 (the "License");
-* you may not use this file except in compliance with the License.
-* You may obtain a copy of the License at
-*
-*      http://www.apache.org/licenses/LICENSE-2.0
-*
-* Unless required by applicable law or agreed to in writing, software
-* distributed under the License is distributed on an "AS IS" BASIS,
-* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-* See the License for the specific language governing permissions and
-* limitations under the License.
-*/
-
 var Decoder = {};
 
 Decoder.rsDecoder = new ReedSolomonDecoder(GF256.QR_CODE_FIELD);
@@ -2129,23 +1908,6 @@ qrcode.grayscale = function () {
 	}
 	return ret;
 };
-/*
-*
-* Copyright 2007 ZXing authors
-*
-* Licensed under the Apache License, Version 2.0 (the "License");
-* you may not use this file except in compliance with the License.
-* You may obtain a copy of the License at
-*
-*      http://www.apache.org/licenses/LICENSE-2.0
-*
-* Unless required by applicable law or agreed to in writing, software
-* distributed under the License is distributed on an "AS IS" BASIS,
-* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-* See the License for the specific language governing permissions and
-* limitations under the License.
-*/
-
 var MIN_SKIP = 3;
 var MAX_MODULES = 57;
 var INTEGER_MATH_SHIFT = 8;
@@ -2678,23 +2440,6 @@ function FinderPatternFinder() {
 	};
 }
 
-/*
-*
-* Copyright 2007 ZXing authors
-*
-* Licensed under the Apache License, Version 2.0 (the "License");
-* you may not use this file except in compliance with the License.
-* You may obtain a copy of the License at
-*
-*      http://www.apache.org/licenses/LICENSE-2.0
-*
-* Unless required by applicable law or agreed to in writing, software
-* distributed under the License is distributed on an "AS IS" BASIS,
-* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-* See the License for the specific language governing permissions and
-* limitations under the License.
-*/
-
 function AlignmentPattern(posX, posY, estimatedModuleSize) {
 	this.x = posX;
 	this.y = posY;
@@ -2908,23 +2653,6 @@ function AlignmentPatternFinder(image, startX, startY, width, height, moduleSize
 		throw "Couldn't find enough alignment patterns";
 	};
 }
-/*
-*
-* Copyright 2007 ZXing authors
-*
-* Licensed under the Apache License, Version 2.0 (the "License");
-* you may not use this file except in compliance with the License.
-* You may obtain a copy of the License at
-*
-*      http://www.apache.org/licenses/LICENSE-2.0
-*
-* Unless required by applicable law or agreed to in writing, software
-* distributed under the License is distributed on an "AS IS" BASIS,
-* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-* See the License for the specific language governing permissions and
-* limitations under the License.
-*/
-
 function QRCodeDataBlockReader(blocks, version, numErrorCorrectionCode) {
 	this.blockPointer = 0;
 	this.bitPointer = 7;
