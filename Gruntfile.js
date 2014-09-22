@@ -21,8 +21,16 @@
 		concat: {
 			options: {
 				stripBanners: true,
-				banner: banner + '\nwindow.qrcode = (function(){\n',
-				footer: '\nreturn qrcode;\n})();'
+				banner: banner + '\n(function(root, factory){\n'
+				      + 'if (typeof define === "function" && define.amd) {\n'
+				      + '  define([], factory);\n'
+				      + '} else if (typeof exports === "object") {\n'
+				      + '  module.exports = factory();\n'
+				      + '} else {\n'
+				      + '  root.qrcode = factory();\n'
+				      + '}\n'
+				      + '}(this, function() {\n',
+				footer: '\nreturn qrcode;\n}));'
 			},
 			js: {
 				src: [
@@ -50,7 +58,7 @@
 		uglify: {
 			js: {
 				options: {
-					banner: banner,
+					banner: banner
 				},
 				files: {
 					'build/qrcode.min.js': ['build/qrcode.js']

@@ -15,7 +15,15 @@
   limitations under the License.
 */
 
-window.qrcode = (function(){
+(function(root, factory){
+if (typeof define === "function" && define.amd) {
+  define([], factory);
+} else if (typeof exports === "object") {
+  module.exports = factory();
+} else {
+  root.qrcode = factory();
+}
+}(this, function() {
 var GridSampler = {};
 
 GridSampler.checkAndNudgePoints = function (image, points) {
@@ -2918,4 +2926,4 @@ function QRCodeDataBlockReader(blocks, version, numErrorCorrectionCode) {
 }
 
 return qrcode;
-})();
+}));
